@@ -1,0 +1,27 @@
+---
+- name: Using the copy module
+  hosts: all
+  remote_user: root
+
+  tasks:
+  - name: Copy a file to managed hosts and set attributes
+    copy:
+      src: files/users.txt
+      dest: /home/ansible/users.txt
+      owner: ansible
+      group: ansible
+      mode: u+rw,g-wx,o-rwx
+      setype: samba_share_t
+
+  - name: Allow samba to modify file in /home/ansible/users.txt
+    sefcontext:
+      target: '/home/ansible/users.txt'
+      setype: samba_share_t
+      state: present
+
+  - name: Apply new SELinux file context to filesystem
+    command: restorecon -irv /home/ansible/users.txt
+    changed_when: false
+
+     
+  

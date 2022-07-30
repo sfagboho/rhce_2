@@ -1,0 +1,22 @@
+---
+- name: Add block of text to a file
+  hosts: all
+  remote_user: ansible
+
+  tasks:
+
+  - name: Create /home/ansible/block.txt file
+    file:
+      path: /home/ansible/block.txt
+      state: touch
+      modification_time: preserve
+      access_time: preserve
+
+
+  - name: Add a block of text to an existing file
+    blockinfile:
+      path: /home/ansible/block.txt
+      block: |
+        This block of text consists of two lines.
+        They have been added by the blockinfile module.
+      state: present

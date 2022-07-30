@@ -1,0 +1,12 @@
+Apr 30 08:45:39 node3 polkitd[889]: Loading rules from directory /etc/polkit-1/rules.d
+Apr 30 08:45:39 node3 polkitd[889]: Loading rules from directory /usr/share/polkit-1/rules.d
+Apr 30 08:45:39 node3 polkitd[889]: Finished loading, compiling and executing 12 rules
+Apr 30 08:45:39 node3 polkitd[889]: Acquired the name org.freedesktop.PolicyKit1 on the system bus
+Apr 30 08:45:42 node3 sshd[1074]: Server listening on 0.0.0.0 port 22.
+Apr 30 08:45:42 node3 sshd[1074]: Server listening on :: port 22.
+Apr 30 08:45:46 node3 systemd[1414]: pam_unix(systemd-user:session): session opened for user gdm by (uid=0)
+Apr 30 08:45:46 node3 gdm-launch-environment][1346]: pam_unix(gdm-launch-environment:session): session opened for user gdm by (uid=0)
+Apr 30 08:45:57 node3 polkitd[889]: Registered Authentication Agent for unix-session:c1 (system bus name :1.68 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale en_US.UTF-8)
+Apr 30 12:03:17 node3 sshd[4245]: Accepted password for root from 192.168.1.50 port 36792 ssh2
+Apr 30 12:03:17 node3 systemd[4251]: pam_unix(systemd-user:session): session opened for user root by (uid=0)
+Apr 30 12:03:18 node3 sshd[4245]: pam_unix(sshd:session): session opened for user root by (uid=0)

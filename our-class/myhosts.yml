@@ -1,0 +1,15 @@
+---
+- name: configure /etc/mynewhosts file
+  hosts: all
+  remote_user: ansible
+  become: true
+
+  tasks:
+    - name: configure /etc/mynewhosts
+      template:
+        src: templates/hosts.j2
+        dest: /etc/mynewhosts
+        owner: root
+        group: root
+        mode: 0644
+      delegate_to: localhost

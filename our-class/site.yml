@@ -1,0 +1,22 @@
+---
+- name: Install and start Apache HTTPD
+  hosts: web
+  become: true
+  tasks:
+
+    - name: httpd package installation
+      yum:
+        name: httpd
+        state: present  
+
+    - name: correct index.html file is present
+      copy:
+        src: files/index.html
+        dest: /var/www/html/index.html    
+
+    - name: httpd is started ans enabled
+      service:
+        name: httpd
+        state: started
+        enabled: true
+
